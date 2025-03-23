@@ -20,3 +20,33 @@ def BinarySearchWithRecursion(lst, target):
 
     return BinarySearchHelperFunction(lst, target, s=0, e=len(lst))
         
+
+# Binary search
+def BinarySearch(lst, target):
+    if len(lst) == 0:
+        return False
+    if lst[0] == target:
+            return True
+
+    s, e = 0, len(lst)
+    
+    if s > e:
+        return False
+
+    while s <= e:
+        m = (s + e)//2
+        try:
+            if target > lst[m]:
+                s = m +1
+            else:
+                e = m -1
+            if target == lst[m]:
+                return True
+        except IndexError:
+            return False
+    return False
+    
+lst = [11,12, 14, 16, 20, 21, 22, 31, 99]
+
+tar = int(input("Enter an integer to search: "))
+print(BinarySearch(lst, tar))
