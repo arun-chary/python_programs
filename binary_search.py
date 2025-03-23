@@ -28,22 +28,19 @@ def BinarySearch(lst, target):
     if lst[0] == target:
             return True
 
-    s, e = 0, len(lst)
+    s, e = 0, len(lst)-1
     
     if s > e:
         return False
 
     while s <= e:
         m = (s + e)//2
-        try:
-            if target > lst[m]:
-                s = m +1
-            else:
-                e = m -1
-            if target == lst[m]:
-                return True
-        except IndexError:
-            return False
+        if target > lst[m]:
+            s = m +1
+        else:
+            e = m -1
+        if target == lst[m]:
+            return True
     return False
     
 lst = [11,12, 14, 16, 20, 21, 22, 31, 99]
