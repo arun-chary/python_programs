@@ -18,7 +18,7 @@ def BinarySearchWithRecursion(lst, target):
         
         return BinarySearchHelperFunction(lst, target, s, m-1)
 
-    return BinarySearchHelperFunction(lst, target, s=0, e=len(lst))
+    return BinarySearchHelperFunction(lst, target, s=0, e=len(lst)-1)
         
 
 # Binary search
